@@ -30,7 +30,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <BrowserRouter basename="/verify-and-trust">
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
