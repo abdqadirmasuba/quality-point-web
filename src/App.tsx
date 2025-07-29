@@ -9,11 +9,12 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import UserGuide from "./pages/UserGuide";
-import DeveloperGuide from "./pages/DeveloperGuide";
+import DeveloperGuide from "./pages/DeveloperGuideNew";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import DeleteAccount from "./pages/DeleteAccount";
 import Manufacturers from "./pages/Manufacturers";
+import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -41,6 +42,7 @@ const App = () => (
             <Route path="/terms-conditions" element={<TermsConditions />} />
             <Route path="/delete-account" element={<DeleteAccount />} />
             <Route path="/manufacturers" element={<Manufacturers />} />
+            <Route path="/blog" element={<Blog />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

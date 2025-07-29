@@ -17,14 +17,6 @@ const Header = () => {
   const location = useLocation();
   const isHome = location.pathname === "/";
 
-  const scrollToSection = (sectionId: string) => {
-    if (isHome) {
-      const element = document.getElementById(sectionId);
-      element?.scrollIntoView({ behavior: "smooth" });
-    } else {
-      window.location.href = `/#${sectionId}`;
-    }
-  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -39,29 +31,41 @@ const Header = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden lg:flex items-center space-x-8">
           <NavigationMenu>
-            <NavigationMenuList>
+            <NavigationMenuList className="space-x-6">
               <NavigationMenuItem>
-                <button 
-                  onClick={() => scrollToSection("about")}
-                  className="text-sm font-medium transition-colors hover:text-primary"
-                >
-                  About Us
-                </button>
+                <Link to="/" className="text-sm font-medium transition-colors hover:text-primary">
+                  Home
+                </Link>
               </NavigationMenuItem>
               
               <NavigationMenuItem>
-                <button 
-                  onClick={() => scrollToSection("services")}
-                  className="text-sm font-medium transition-colors hover:text-primary"
-                >
-                  Our Services
-                </button>
+                <Link to="/services" className="text-sm font-medium transition-colors hover:text-primary">
+                  Services
+                </Link>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Documentation</NavigationMenuTrigger>
+                <Link to="/#faq" className="text-sm font-medium transition-colors hover:text-primary">
+                  FAQ
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <Link to="/blog" className="text-sm font-medium transition-colors hover:text-primary">
+                  Blog
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <Link to="/about" className="text-sm font-medium transition-colors hover:text-primary">
+                  About
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Docs</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="w-48 p-2">
                     <NavigationMenuLink asChild>
@@ -71,7 +75,7 @@ const Header = () => {
                     </NavigationMenuLink>
                     <NavigationMenuLink asChild>
                       <Link to="/developer-guide" className="block px-3 py-2 text-sm hover:bg-accent rounded-md">
-                        Developer Guide
+                        Developer
                       </Link>
                     </NavigationMenuLink>
                     <NavigationMenuLink asChild>
@@ -89,15 +93,6 @@ const Header = () => {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <button 
-                  onClick={() => scrollToSection("faq")}
-                  className="text-sm font-medium transition-colors hover:text-primary"
-                >
-                  FAQ
-                </button>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
                 <Link to="/contact" className="text-sm font-medium transition-colors hover:text-primary">
                   Contact
                 </Link>
@@ -105,16 +100,21 @@ const Header = () => {
             </NavigationMenuList>
           </NavigationMenu>
 
-          <ThemeToggle />
-          
-          <Button className="bg-primary hover:bg-primary-dark">
-            <Download className="w-4 h-4 mr-2" />
-            Get App
-          </Button>
+          <div className="flex items-center space-x-4">
+            <ThemeToggle />
+            
+            <Button 
+              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              onClick={() => window.open('https://play.google.com/store/apps/details?id=com.qualitypoint.qualitypoint&hl=en', '_blank')}
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Get App
+            </Button>
+          </div>
         </nav>
 
         {/* Mobile Menu Button */}
-        <div className="flex items-center space-x-2 md:hidden">
+        <div className="flex items-center space-x-2 lg:hidden">
           <ThemeToggle />
           <Button
             variant="ghost"
@@ -128,36 +128,71 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden border-t bg-background">
+        <div className="lg:hidden border-t bg-background/95 backdrop-blur">
           <nav className="container py-4 space-y-3">
-            <button 
-              onClick={() => {
-                scrollToSection("about");
-                setIsMobileMenuOpen(false);
-              }}
-              className="block w-full text-left py-2 text-sm font-medium"
+            <Link 
+              to="/" 
+              className="block py-2 text-sm font-medium hover:text-primary"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
-              About Us
-            </button>
-            <button 
-              onClick={() => {
-                scrollToSection("services");
-                setIsMobileMenuOpen(false);
-              }}
-              className="block w-full text-left py-2 text-sm font-medium"
+              Home
+            </Link>
+            <Link 
+              to="/services" 
+              className="block py-2 text-sm font-medium hover:text-primary"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
-              Our Services
-            </button>
-            <Link to="/user-guide" className="block py-2 text-sm font-medium">
+              Services
+            </Link>
+            <Link 
+              to="/#faq" 
+              className="block py-2 text-sm font-medium hover:text-primary"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              FAQ
+            </Link>
+            <Link 
+              to="/blog" 
+              className="block py-2 text-sm font-medium hover:text-primary"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Blog
+            </Link>
+            <Link 
+              to="/about" 
+              className="block py-2 text-sm font-medium hover:text-primary"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              About
+            </Link>
+            <Link 
+              to="/user-guide" 
+              className="block py-2 text-sm font-medium hover:text-primary"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               User Guide
             </Link>
-            <Link to="/developer-guide" className="block py-2 text-sm font-medium">
-              Developer Guide
+            <Link 
+              to="/developer-guide" 
+              className="block py-2 text-sm font-medium hover:text-primary"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Developer
             </Link>
-            <Link to="/contact" className="block py-2 text-sm font-medium">
+            <Link 
+              to="/contact" 
+              className="block py-2 text-sm font-medium hover:text-primary"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               Contact
             </Link>
-            <Button className="w-full bg-primary hover:bg-primary-dark">
+            <Button 
+              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground mt-4"
+              onClick={() => {
+                window.open('https://play.google.com/store/apps/details?id=com.qualitypoint.qualitypoint&hl=en', '_blank');
+                setIsMobileMenuOpen(false);
+              }}
+            >
               <Download className="w-4 h-4 mr-2" />
               Get App
             </Button>

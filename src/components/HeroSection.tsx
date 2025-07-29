@@ -25,7 +25,11 @@ const HeroSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-primary hover:bg-primary-dark">
+              <Button 
+                size="lg" 
+                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                onClick={() => window.open('https://play.google.com/store/apps/details?id=com.qualitypoint.qualitypoint&hl=en', '_blank')}
+              >
                 <Download className="w-5 h-5 mr-2" />
                 Download App
               </Button>
@@ -50,40 +54,17 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary to-secondary p-8">
-              <div className="bg-background rounded-xl p-6 space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                    <Scan className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold">Product Scanner</h3>
-                    <p className="text-sm text-muted-foreground">Scan & Verify Instantly</p>
-                  </div>
-                </div>
-                
-                <div className="bg-muted rounded-lg p-4 space-y-3">
-                  <div className="h-32 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg flex items-center justify-center">
-                    <div className="w-16 h-16 border-2 border-primary rounded-lg flex items-center justify-center">
-                      <div className="w-8 h-8 bg-primary rounded"></div>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium">Product Status</span>
-                      <span className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full">
-                        ✓ Verified
-                      </span>
-                    </div>
-                    <div className="h-2 bg-secondary/20 rounded-full overflow-hidden">
-                      <div className="h-full w-full bg-secondary rounded-full"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <div className="relative flex justify-center items-center">
+            <div className="relative">
+              <img 
+                src="/src/assets/phone-mockup.jpg" 
+                alt="Quality Point Mobile App" 
+                className="w-64 h-auto rounded-3xl shadow-2xl"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-secondary/20 rounded-3xl"></div>
             </div>
+            <div className="absolute -top-4 -right-4 w-16 h-16 bg-secondary/20 rounded-full blur-xl"></div>
+            <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-primary/20 rounded-full blur-xl"></div>
           </div>
         </div>
       </div>

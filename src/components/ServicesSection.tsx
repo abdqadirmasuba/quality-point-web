@@ -38,8 +38,18 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-20">
-      <div className="container">
+    <section id="services" className="py-20 relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src="/src/assets/services-bg.jpg" 
+          alt="Services Background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/95"></div>
+      </div>
+      
+      <div className="container relative">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold">
             Our <span className="text-primary">Services</span>
@@ -49,22 +59,22 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {services.map((service, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-shadow">
-              <CardHeader>
+            <Card key={index} className="group hover:shadow-lg transition-all duration-300 flex flex-col h-full backdrop-blur-sm bg-background/80 border-border/50">
+              <CardHeader className="pb-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                   <service.icon className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle className="text-xl">{service.title}</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground">{service.description}</p>
+              <CardContent className="space-y-4 flex-1">
+                <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
                 <ul className="space-y-2">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center space-x-2 text-sm">
-                      <div className="w-1.5 h-1.5 bg-secondary rounded-full"></div>
-                      <span>{feature}</span>
+                    <li key={featureIndex} className="flex items-start space-x-2 text-sm">
+                      <div className="w-1.5 h-1.5 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+                      <span className="leading-relaxed">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -75,7 +85,7 @@ const ServicesSection = () => {
 
         <div className="text-center">
           <Link to="/services">
-            <Button size="lg" className="group">
+            <Button size="lg" className="group bg-primary hover:bg-primary/90 text-primary-foreground">
               Explore All Services
               <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
             </Button>
