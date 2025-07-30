@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import logo from "@/assets/logo.png"; 
 import { 
   NavigationMenu,
   NavigationMenuContent,
@@ -23,11 +24,10 @@ const Header = () => {
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
           <img 
-            src="/lovable-uploads/d5a43fb2-5d9a-43b6-9210-d53c82a70a81.png" 
+            src={logo}
             alt="Quality Point Logo" 
-            className="h-8 w-auto"
+            className="h-10 w-auto"
           />
-          <span className="text-xl font-bold text-primary">Quality Point</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -37,30 +37,6 @@ const Header = () => {
               <NavigationMenuItem>
                 <Link to="/" className="text-sm font-medium transition-colors hover:text-primary">
                   Home
-                </Link>
-              </NavigationMenuItem>
-              
-              <NavigationMenuItem>
-                <Link to="/services" className="text-sm font-medium transition-colors hover:text-primary">
-                  Services
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Link to="/#faq" className="text-sm font-medium transition-colors hover:text-primary">
-                  FAQ
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Link to="/blog" className="text-sm font-medium transition-colors hover:text-primary">
-                  Blog
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Link to="/about" className="text-sm font-medium transition-colors hover:text-primary">
-                  About
                 </Link>
               </NavigationMenuItem>
 
@@ -91,6 +67,30 @@ const Header = () => {
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
+              
+              <NavigationMenuItem>
+                <Link to="/services" className="text-sm font-medium transition-colors hover:text-primary">
+                  Services
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <Link to="/#faq" className="text-sm font-medium transition-colors hover:text-primary">
+                  FAQ
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <Link to="/blog" className="text-sm font-medium transition-colors hover:text-primary">
+                  Blog
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <Link to="/about" className="text-sm font-medium transition-colors hover:text-primary">
+                  About
+                </Link>
+              </NavigationMenuItem>              
 
               <NavigationMenuItem>
                 <Link to="/contact" className="text-sm font-medium transition-colors hover:text-primary">

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Download, Shield, Scan, CheckCircle } from "lucide-react";
+import MobileApp from "@/assets/phone-mockup.jpg";
 
 const HeroSection = () => {
   return (
@@ -57,7 +58,7 @@ const HeroSection = () => {
           <div className="relative flex justify-center items-center">
             <div className="relative">
               <img 
-                src="/src/assets/phone-mockup.jpg" 
+                src={MobileApp}
                 alt="Quality Point Mobile App" 
                 className="w-64 h-auto rounded-3xl shadow-2xl"
               />

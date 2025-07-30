@@ -29,6 +29,7 @@ import {
   ChevronDown,
   ChevronRight
 } from "lucide-react";
+import Logo from "@/assets/logo.png";
 
 const DevSidebar = () => {
   const sidebar = useSidebar();
@@ -120,11 +121,10 @@ const DevSidebar = () => {
             {!isCollapsed && (
               <>
                 <img 
-                  src="/lovable-uploads/d5a43fb2-5d9a-43b6-9210-d53c82a70a81.png" 
+                  src={Logo}
                   alt="Quality Point Logo" 
                   className="h-6 w-auto"
                 />
-                <span className="text-lg font-bold text-primary">Quality Point</span>
               </>
             )}
           </Link>

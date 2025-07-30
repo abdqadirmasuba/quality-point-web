@@ -5,6 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import Logo from "@/assets/logo.png"; // Adjust the path as necessary
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -29,11 +30,10 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <img 
-                src="/lovable-uploads/d5a43fb2-5d9a-43b6-9210-d53c82a70a81.png" 
+                src={Logo}
                 alt="Quality Point Logo" 
-                className="h-8 w-auto"
+                className="h-16 w-auto"
               />
-              <span className="text-lg font-bold text-primary">Quality Point</span>
             </div>
             <p className="text-sm text-muted-foreground">
               Ensuring product authenticity through advanced verification technology.

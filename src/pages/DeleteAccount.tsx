@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
+import Logo from "@/assets/logo.png";
 
 const DeleteAccount = () => {
   const [email, setEmail] = useState("");
@@ -36,11 +37,10 @@ const DeleteAccount = () => {
           <div className="container flex h-16 items-center justify-between">
             <Link to="/" className="flex items-center space-x-2">
               <img 
-                src="/lovable-uploads/d5a43fb2-5d9a-43b6-9210-d53c82a70a81.png" 
+                src={Logo}
                 alt="Quality Point Logo" 
-                className="h-8 w-auto"
+                className="h-10 w-auto"
               />
-              <span className="text-xl font-bold text-primary">Quality Point</span>
             </Link>
             <Link to="/">
               <Button variant="ghost" size="sm">
@@ -84,7 +84,7 @@ const DeleteAccount = () => {
         <div className="container flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="/lovable-uploads/d5a43fb2-5d9a-43b6-9210-d53c82a70a81.png" 
+              src={Logo}
               alt="Quality Point Logo" 
               className="h-8 w-auto"
             />
