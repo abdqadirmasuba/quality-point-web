@@ -30,7 +30,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter basename="/verify-and-trust">
+        <BrowserRouter basename="/quality-point-web">
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
