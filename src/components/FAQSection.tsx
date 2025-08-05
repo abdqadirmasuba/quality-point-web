@@ -13,7 +13,7 @@ const FAQSection = () => {
     },
     {
       question: "Is the Quality Point app free to use?",
-      answer: "Yes, the Quality Point app is completely free for consumers. Users can scan unlimited products and access all verification features at no cost. Our revenue comes from our manufacturer partnership program."
+      answer: "Yes, the Quality Point app is completely free for consumers. Users can scan unlimited products and access all verification features at no cost."
     },
     {
       question: "What should I do if a product shows as counterfeit?",
