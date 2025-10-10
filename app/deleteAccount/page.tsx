@@ -38,7 +38,7 @@ const DeleteAccount = () => {
                     <div className="container flex h-16 items-center justify-between">
                         <Link href="/" className="flex items-center space-x-2">
                             <Image
-                                src="/images/logo.png"
+                                src="/quality-point-web/images/logo.png"
                                 alt="Quality Point Logo"
                                 className="h-10 w-auto"
                                 priority
@@ -87,7 +87,7 @@ const DeleteAccount = () => {
                     <Link href="/" className="flex items-center space-x-2">
                         
                         <Image
-                            src="/images/logo.png"
+                            src="/quality-point-web/images/logo.png"
                             alt="Quality Point Logo"
                             className="h-8 w-auto"
                             width={32}

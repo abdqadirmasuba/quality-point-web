@@ -33,7 +33,7 @@ const Footer = () => {
             <div className="flex items-center space-x-2">
               <div className="h-16 w-auto">
                 <Image
-                  src="/images/logo.png"
+                  src="/quality-point-web/images/logo.png"
                   alt="Quality Point Logo"
                   width={84}
                   height={84}

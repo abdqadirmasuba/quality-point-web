@@ -58,7 +58,7 @@ const HeroSection = () => {
           <div className="relative flex justify-center items-center">
             <div className="relative">
               <Image
-                src="/images/phone-mockup.jpg"
+                src="/quality-point-web/images/phone-mockup.jpg"
                 alt="Quality Point Mobile App" 
                 fill
                 className="w-64 h-auto rounded-3xl shadow-2xl"
